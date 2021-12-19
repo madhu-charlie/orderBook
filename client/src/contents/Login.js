@@ -41,3 +41,35 @@ function Login({ history }) {
     );
 }
 export default withRouter(Login)
+// import './App.css';
+// import '../Styles/loginPage.css'
+
+
+// function Login() {
+//     return (
+//         <nav>
+//             <section class="login">
+//                 {/* <span className='circle'></span> */}
+//                 <div className='total' style={{marginLeft: '50%'}}>
+//                     {/* switch */}
+//                     <div className='title'> <h1>Login Page</h1> </div>
+//                     <div className='login'>
+//                         <form>
+//                             <label className='label'> Username: </label>
+//                             <input type="text" placeholder='Enter Username' className='input-fields' />
+//                             <label className='label'> Password: </label>
+//                             <input type="password" placeholder='Enter Password' className='input-fields' />
+//                             <input className="admin-input" type="checkbox" />
+//                             <label className='admin-label'> Are you admin? </label>
+//                             <input type="submit" id='submit' />
+//                         </form>
+//                         {/* <div className='not-user'>
+//               <p> Not user? Sign-in as admin</p>
+//             </div> */}
+//                     </div>
+//                 </div></section>
+//         </nav>
+//     );
+// }
+
+// export default Login;

@@ -29,11 +29,11 @@ class AdminNavbar extends Component {
             <img src={profilepic} className="profilepic"></img>
             <h2>Admin</h2>
             <ul className="nav_items">
-                <NavLink item="SEARCH" to="/search" style={{textDecorationLine:"none",color:"HighlightText"}} activec={this.activeitem}>SEARCH</NavLink>
+                {/* <NavLink item="SEARCH" to="/search" style={{textDecorationLine:"none",color:"HighlightText"}} activec={this.activeitem}>SEARCH</NavLink> */}
                 <br/>
                 <br/>
                 <br/>
-                <NavLink item="LOGOUT" to="/" style={{textDecorationLine:"none",color:"HighlightText"}} >LOGOUT</NavLink>
+                <NavLink item="LOGOUT" to="/" style={{textDecorationLine:"none",color:"HighlightText", marginLeft: 35}} >LOGOUT</NavLink>
                 <br/>
                 <br/>
                 <br/>

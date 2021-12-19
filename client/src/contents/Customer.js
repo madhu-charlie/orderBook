@@ -2,26 +2,29 @@ import { Button, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem,
 import React from 'react';
 import CustomerNavbar from '../components/CustomerNavbar';
 import '../Styles/Registrationc.css';
+import axios from 'axios';
 
-function Admin(props) {
-    // const submitHandler = () => {
-    //     const data = {
-    //         "rationId": rationNumber,
-    //         "members": members,
-    //         "phone": phone,
-    //         "address": address
-    //     }
-    //     axios.post('http://localhost:3001/addData', { data }).then(
-    //         function (res) {
-    //             // console.log(res);
-    //         }
-    //     )
-    // }
-    const [age, setAge] = React.useState('');
-
+function Admin() {
+    const [stock, setstock] = React.useState(null);
+    const [orderType, setOrderType] = React.useState(null);
+    const [price, setPrice] = React.useState(null);
+    const [quantity, setquantity] = React.useState(null);
     const handleChange = (event) => {
-        setAge(event.target.value);
+        setstock(event.target.value);
     };
+    const placeOrder = () => {
+        const data = {
+            "stock": stock,
+            "ordertype": orderType,
+            "price": price,
+            "quantity": quantity
+        }
+        axios.post('http://localhost:3001/addcategory', { data }).then(
+            function (res) {
+                console.log(res);
+            }
+        )
+    }
     return (
         <div>
             <CustomerNavbar />
@@ -36,13 +39,13 @@ function Admin(props) {
                         <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            value={age}
-                            label="Age"
+                            value={stock}
+                            label="stock"
                             onChange={handleChange}
                         >
                             <MenuItem value={'DBS'}>DBS</MenuItem>
                             <MenuItem value={'Amazon'}>Amazon</MenuItem>
-                            <MenuItem value={'30'}>Flipkart</MenuItem>
+                            <MenuItem value={'Flipkart'}>Flipkart</MenuItem>
                         </Select>
                     </FormControl>
                 </div>
@@ -51,9 +54,9 @@ function Admin(props) {
                         Order Type
                     </div>
                     <FormControl component="fieldset">
-                        <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
-                            <FormControlLabel value="female" control={<Radio />} label="Limit" />
-                            <FormControlLabel value="male" control={<Radio />} label="Marker" />
+                        <RadioGroup row aria-label="gender" name="row-radio-buttons-group" onChange={(event) => { setOrderType(event.target.value) }}>
+                            <FormControlLabel value="limit" control={<Radio />} label="Limit" />
+                            <FormControlLabel value="market" control={<Radio />} label="Market" />
                         </RadioGroup>
                     </FormControl>
                 </div>
@@ -61,11 +64,13 @@ function Admin(props) {
                     <div style={{ textAlign: 'center', paddingTop: 20 }}>
                         Price
                     </div>
-                    <div style={{marginLeft: 60}}>
+                    <div style={{ marginLeft: 50 }}>
                         <TextField
                             id="filled-search"
                             label="Price"
                             type="search"
+                            value={price}
+                            onChange={(event) => { setPrice(event.target.value) }}
                         />
                     </div>
                 </div>
@@ -77,10 +82,12 @@ function Admin(props) {
                         id="filled-search"
                         label="quantity"
                         type="search"
+                        value={quantity}
+                        onChange={(event) => { setquantity(event.target.value) }}
                     />
                 </div>
                 <div style={{ position: 'absolute', top: '50%', marginLeft: '50%' }}>
-                    <Button variant="contained">Place Order</Button>
+                    <Button variant="contained" onClick={() => { placeOrder() }}>Place Order</Button>
                 </div>
             </div>
         </div >
