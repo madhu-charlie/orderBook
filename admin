@@ -1,0 +1,63 @@
+<div className="Admindiv">
+                <div  style={{ position: 'left', top: '50%', marginLeft: '50%' }}>
+                    <Button variant="contained">Open Market</Button>
+                </div>
+                <div  style={{ position: 'right', top: '50%', marginLeft: '50%' }}>
+                    <Button variant="contained">Open Market</Button>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', textAlign: 'center', justifyContent: 'space-around', margin: 30 }}>
+                    <div style={{ textAlign: 'center', paddingTop: 20 }}>
+                        Search Stock
+                    </div>
+                    <FormControl style={{ width: 200 }}>
+                        <InputLabel id="demo-simple-select-label">Stock</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={age}
+                            label="Age"
+                            onChange={handleChange}
+                        >
+                            <MenuItem value={'DBS'}>DBS</MenuItem>
+                            <MenuItem value={'Amazon'}>Amazon</MenuItem>
+                            <MenuItem value={'30'}>Flipkart</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
+                <div  style={{ position: 'left', top: '50%', marginLeft: '50%' }}>
+                    <Button variant="contained">From Date</Button>
+                </div>
+                <div  style={{ position: 'right', top: '50%', marginLeft: '50%' }}>
+                    <Button variant="contained">To Date</Button>
+                </div>
+                <div  style={{ position: 'absoulte', top: '50%', marginLeft: '50%' }}>
+                    <Button variant="contained">To Date</Button>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', textAlign: 'center', justifyContent: 'space-around', margin: 30 }}>
+                    <div style={{ textAlign: 'center', paddingTop: 20 }}>
+                        Execution Quantity
+                    </div>
+                    <div style={{marginLeft: 60}}>
+                        <TextField
+                            id="filled-search"
+                            label="Price"
+                            type="search"
+                        />
+                    </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', textAlign: 'center', justifyContent: 'space-around', margin: 30 }}>
+                    <div style={{ textAlign: 'center', paddingTop: 20 }}>
+                        Execution price
+                    </div>
+                    <TextField
+                        id="filled-search"
+                        label="quantity"
+                        type="search"
+                    />
+                </div>
+                <div  style={{ position: 'right', top: '50%', marginLeft: '50%' }}>
+                    <Button variant="contained">Execute order</Button>
+                </div>
+
+            </div>
+        </div >
